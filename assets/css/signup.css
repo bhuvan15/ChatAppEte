@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,300;1,600&family=PT+Sans&family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #1f2833;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.logo {
+    color: #66fcf1;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+.logo h1 {
+    font-size: 44px;
+ }
+.logo a {
+    text-decoration: none;
+    color: #66fcf1;
+}
+
+.container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 100px;
+}
+form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.email {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.username {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.password {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.confirmPassword {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    color: #fff;
+    font-size: 32px;
+}
+
+input {
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 15px;
+    border: 2px solid #66fcf1;
+    background-color: #1f2833;
+    color: #66fcf1;
+}
+input:focus {
+    outline: none;
+    border: 2px solid #45829e;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(180, 179, 179);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(180, 179, 179);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(180, 179, 179);
+}
+
+
+#btn {
+    height: 75px;
+    width: 100%;
+    background-color: #1f2833;
+    border: 2px solid #66fcf1;
+    border-radius: 15px;
+    font-size: 32px;
+    color: #66fcf1;
+    margin-top: 25px;
+    transition: 0.25s linear 0s;
+}
+#btn:hover {
+    background-color: #66fcf1;
+    color: #1f2833;
+
+}
+.signup-div {
+    color: #fff;
+    margin: 35px;
+    font-size: 18px;
+}
+
+.signup-div p a {
+    color: #66fcf1;
+    font-size: 28px;
+    text-decoration: underline;
+    margin-left: 7px;
+}
