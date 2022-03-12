@@ -10,8 +10,6 @@ router.get('/register', (req, res) => {
     res.render('signup');
 })
 
-
-
 // register the new user to the database
 router.post('/register', async(req, res) => {
     /* Checking password and confirm password value */
