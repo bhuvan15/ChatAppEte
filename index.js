@@ -16,6 +16,7 @@ const User = require('./models/user')
 
 const authRoutes = require('./routes/authRoutes');
 
+const PORT = 8000;
 
 // For Socket
 const http = require('http');
@@ -46,7 +47,6 @@ sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-// An object that contains response local variables scoped to the request, and therefore available only to the view(s) rendered during that request / response cycle (if any). Otherwise, this property is identical to app.locals.
 app.use((req, res, next) => {
     // iske baad success wala variable har ek template ke uper applicable hoo jega
     res.locals.success = req.flash('success');
@@ -57,9 +57,7 @@ app.use((req, res, next) => {
 
 
 
-
-
-
+/* Initializing passport.js */
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -71,33 +69,32 @@ passport.deserializeUser(User.deserializeUser());
 app.use(authRoutes);
 
 
-const users={}    // we make a users object
+const users={}    // User Object
 
 
 
 io.on('connection', (socket) => {
-
-    // console.log(`Connection Established --> ${socket.id}`);
     
     socket.on('send_msg', (data) => {
 
-        // if we use socket.broadcast.emit here then voo sender ke alava sab koo voo message bhej dega
-        //console.log(users[socket.id]);
         io.emit('recieved_msg', {
             msg: data.msg,
-            // id: socket.id
             user: data.user
         })
 
     });
 
     socket.on('login', (data) => {
-        users[socket.id] = data.user;      // key value mapping kar di idhar
+        users[socket.id] = data.user;   
     });
 
 });
 
 
-server.listen(8000, () => {
-    console.log('server running at port 8000');
+/* Firing up the server */
+server.listen(PORT, (err) => {
+    if(err) {
+        console.log("Error in Starting the server")
+    }
+    console.log(`Server running at port ${PORT}`);
 })
